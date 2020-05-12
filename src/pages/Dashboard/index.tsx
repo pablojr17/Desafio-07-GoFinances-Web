@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import income from '../../assets/income.svg';
 import outcome from '../../assets/outcome.svg';
 import total from '../../assets/total.svg';
@@ -88,7 +87,7 @@ const Dashboard: React.FC = () => {
               {transactions.map(transaction => (
                 <tr>
                   <td className="title">{transaction.title}</td>
-                  <td className="income">
+                  <td className={transaction.type}>
                     {transaction.type === 'outcome'
                       ? `- ${formatValue(transaction.value)}`
                       : `${formatValue(transaction.value)}`}
